@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Message{% endblock %}
+
+{% block body %}
+    <h1>Message</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Mail</th>
+                <th>Telephone</th>
+                <th>Message</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for message in messages %}
+            <tr>
+                <td>{{ message.id }}</td>
+                <td>{{ message.Mail }}</td>
+                <td>{{ message.Telephone }}</td>
+                <td>{{ message.Message }}</td>
+                <td>
+                    <a class="btn btn-primary" href="{{ path('app_message_show', {'id': message.id}) }}">Show</a>
+                    <a class="btn btn-warning" href="{{ path('app_message_edit', {'id': message.id}) }}">Edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn btn-success" href="{{ path('app_message_new') }}">Create new</a>
+{% endblock %}

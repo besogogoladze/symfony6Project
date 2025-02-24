@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User2{% endblock %}
+
+{% block body %}
+    <h1>User2</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ user2.id }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ user2.email }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ user2.name }}</td>
+            </tr>
+            <tr>
+                <th>Surname</th>
+                <td>{{ user2.surname }}</td>
+            </tr>
+            <tr>
+                <th>Roles</th>
+                <td>{{ user2.roles ? user2.roles|json_encode : '' }}</td>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td>{{ user2.password }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_user2_index') }}">back to list</a>
+
+    <a href="{{ path('app_user2_edit', {'id': user2.id}) }}">edit</a>
+
+    {{ include('user2/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,11 @@
+nelmio_cors:
+    defaults:
+        allow_origin: ['http://localhost:3000', 'http://symfony6.ge']  # Allow localhost and your production domain
+        allow_headers: ['Content-Type', 'Authorization']
+        allow_methods: ['GET', 'POST', 'OPTIONS', 'PUT', 'DELETE']
+        expose_headers: ['Content-Length']
+        max_age: 3600
+        allow_credentials: false
+    paths:
+        '^/':  # Apply CORS settings to all API routes
+            allow_origin: ['http://localhost:3000', 'http://symfony6.ge']

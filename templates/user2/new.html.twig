@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New User2{% endblock %}
+
+{% block body %}
+    <h1>Create new User2</h1>
+
+    {{ include('user2/_form.html.twig') }}
+
+    <a href="{{ path('app_user2_index') }}">back to list</a>
+{% endblock %}
